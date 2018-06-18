@@ -27,6 +27,13 @@ public class UserPreferences {
 	private static final int MAX_RECENT_TEXTS = 20;
 	
 	private static final String ID_RECENT_DICTIONARIES_NODE = "recent_dictionaries";
+        private static final String ID_RECENT_DELAS_NODE = "recent_delas";
+        private static final String ID_RECENT_DELAC_NODE = "recent_delac";
+        private static final String ID_RECENT_STRATEGYXML_NODE = "recent_strategy_xml";
+        private static final String ID_RECENT_STRATEGYTXT_NODE = "recent_strategy_txt";
+        private static final String ID_RECENT_STRATEGYDELAC_NODE = "recent_strategy_delac";
+        private static final String ID_RECENT_STRATEGYDELAS_NODE = "recent_strategy_delas";
+        private static final String ID_RECENT_STRATEGYDELAF_NODE = "recent_strategy_delaf";
 	private static final String PREFIX_ID_RECENT_DICTIONARY = "dict";
 	private static final int MAX_RECENT_DICTIONARIES = 20;
 
@@ -87,6 +94,76 @@ public class UserPreferences {
 		}
 	}
 
+	private java.util.prefs.Preferences recentDelasPrefs() {
+		if (prefs == null)
+			return null;
+		try {
+			return prefs.node(ID_RECENT_DELAS_NODE);
+		} catch (IllegalStateException e) {
+			return null;
+		}
+	}        
+
+	private java.util.prefs.Preferences recentDelacPrefs() {
+		if (prefs == null)
+			return null;
+		try {
+			return prefs.node(ID_RECENT_DELAC_NODE);
+		} catch (IllegalStateException e) {
+			return null;
+		}
+	} 
+        
+	private java.util.prefs.Preferences recentStrategyXmlPrefs() {
+		if (prefs == null)
+			return null;
+		try {
+			return prefs.node(ID_RECENT_STRATEGYXML_NODE);
+		} catch (IllegalStateException e) {
+			return null;
+		}
+	}         
+        
+	private java.util.prefs.Preferences recentStrategyTxtPrefs() {
+		if (prefs == null)
+			return null;
+		try {
+			return prefs.node(ID_RECENT_STRATEGYTXT_NODE);
+		} catch (IllegalStateException e) {
+			return null;
+		}
+	}
+
+	private java.util.prefs.Preferences recentStrategyDelacPrefs() {
+		if (prefs == null)
+			return null;
+		try {
+			return prefs.node(ID_RECENT_STRATEGYDELAC_NODE);
+		} catch (IllegalStateException e) {
+			return null;
+		}
+	}            
+
+	private java.util.prefs.Preferences recentStrategyDelasPrefs() {
+		if (prefs == null)
+			return null;
+		try {
+			return prefs.node(ID_RECENT_STRATEGYDELAS_NODE);
+		} catch (IllegalStateException e) {
+			return null;
+		}
+	}
+        
+	private java.util.prefs.Preferences recentStrategyDelafPrefs() {
+		if (prefs == null)
+			return null;
+		try {
+			return prefs.node(ID_RECENT_STRATEGYDELAF_NODE);
+		} catch (IllegalStateException e) {
+			return null;
+		}
+	}          
+        
 	public List<File> getRecentGraphs() {
 		List<File> l = new ArrayList<File>();
 		java.util.prefs.Preferences gp = recentGraphsPrefs();
@@ -108,7 +185,245 @@ public class UserPreferences {
 		}
 		return l;
 	}
+        
+	public String getRecentDelas() {
+		java.util.prefs.Preferences gp = recentDelasPrefs();
+                 String val="";
+		try {
+                    if (gp == null || gp.keys().length==0)
+                         return "";
+                    
+                    String[] keys = gp.keys();
+                    Arrays.sort(keys);
+                    val = gp.get(keys[0], null);
+			
+		} catch (BackingStoreException e) {
+			return "";
+		} catch (IllegalStateException e) {
+			return "";
+		}
+		return val;
+	}	
+        
+        public String getRecentStrategyXml() {
+		java.util.prefs.Preferences gp = recentStrategyXmlPrefs();
+                 String val="";
+		try {
+                    if (gp == null || gp.keys().length==0)
+                         return "";
+                    
+                    String[] keys = gp.keys();
+                    Arrays.sort(keys);
+                    val = gp.get(keys[0], null);
+			
+		} catch (BackingStoreException e) {
+			return "";
+		} catch (IllegalStateException e) {
+			return "";
+		}
+		return val;
+	}        
+        
+	public String getRecentStrategyTxt() {
+		java.util.prefs.Preferences gp = recentStrategyTxtPrefs();
+                 String val="";
+		try {
+                    if (gp == null || gp.keys().length==0)
+                         return "";
+                    
+                    String[] keys = gp.keys();
+                    Arrays.sort(keys);
+                    val = gp.get(keys[0], null);
+			
+		} catch (BackingStoreException e) {
+			return "";
+		} catch (IllegalStateException e) {
+			return "";
+		}
+		return val;
+	}
 
+	public String getRecentStrategyDelac() {
+		java.util.prefs.Preferences gp = recentStrategyDelacPrefs();
+                 String val="";
+		try {
+                    if (gp == null || gp.keys().length==0)
+                         return "";
+                    
+                    String[] keys = gp.keys();
+                    Arrays.sort(keys);
+                    val = gp.get(keys[0], null);
+			
+		} catch (BackingStoreException e) {
+			return "";
+		} catch (IllegalStateException e) {
+			return "";
+		}
+		return val;
+	}
+
+	public String getRecentStrategyDelas() {
+		java.util.prefs.Preferences gp = recentStrategyDelasPrefs();
+                 String val="";
+		try {
+                    if (gp == null || gp.keys().length==0)
+                         return "";
+                    
+                    String[] keys = gp.keys();
+                    Arrays.sort(keys);
+                    val = gp.get(keys[0], null);
+			
+		} catch (BackingStoreException e) {
+			return "";
+		} catch (IllegalStateException e) {
+			return "";
+		}
+		return val;
+	}         
+
+	public String getRecentStrategyDelaf() {
+		java.util.prefs.Preferences gp = recentStrategyDelafPrefs();
+                 String val="";
+		try {
+                    if (gp == null || gp.keys().length==0)
+                         return "";
+                    
+                    String[] keys = gp.keys();
+                    Arrays.sort(keys);
+                    val = gp.get(keys[0], null);
+			
+		} catch (BackingStoreException e) {
+			return "";
+		} catch (IllegalStateException e) {
+			return "";
+		}
+		return val;
+	}         
+        
+	public boolean setRecentStrategyXml(String link) {
+		java.util.prefs.Preferences gp = recentStrategyXmlPrefs();
+		if (gp == null)
+			return false;
+		try {
+                    gp.clear();
+                    gp.put(ID_RECENT_STRATEGYXML_NODE, link);			
+		} catch (BackingStoreException e) {
+			return false;
+		} catch (IllegalStateException e) {
+			return false;
+		}
+		return true;
+	}
+        
+	public boolean setRecentStrategyTxt(String link) {
+		java.util.prefs.Preferences gp = recentStrategyTxtPrefs();
+		if (gp == null)
+			return false;
+		try {
+                    gp.clear();
+                    gp.put(ID_RECENT_STRATEGYTXT_NODE, link);			
+		} catch (BackingStoreException e) {
+			return false;
+		} catch (IllegalStateException e) {
+			return false;
+		}
+		return true;
+	}    
+
+	public boolean setRecentStrategyDelac(String link) {
+		java.util.prefs.Preferences gp = recentStrategyDelacPrefs();
+		if (gp == null)
+			return false;
+		try {
+                    gp.clear();
+                    gp.put(ID_RECENT_STRATEGYDELAC_NODE, link);			
+		} catch (BackingStoreException e) {
+			return false;
+		} catch (IllegalStateException e) {
+			return false;
+		}
+		return true;
+	}     
+        
+	public boolean setRecentStrategyDelas(String link) {
+		java.util.prefs.Preferences gp = recentStrategyDelasPrefs();
+		if (gp == null)
+			return false;
+		try {
+                    gp.clear();
+                    gp.put(ID_RECENT_STRATEGYDELAS_NODE, link);			
+		} catch (BackingStoreException e) {
+			return false;
+		} catch (IllegalStateException e) {
+			return false;
+		}
+		return true;
+	}           
+        
+	public boolean setRecentStrategyDelaf(String link) {
+		java.util.prefs.Preferences gp = recentStrategyDelafPrefs();
+		if (gp == null)
+			return false;
+		try {
+                    gp.clear();
+                    gp.put(ID_RECENT_STRATEGYDELAF_NODE, link);			
+		} catch (BackingStoreException e) {
+			return false;
+		} catch (IllegalStateException e) {
+			return false;
+		}
+		return true;
+	}           
+        
+	public boolean setRecentDelas(String link) {
+		java.util.prefs.Preferences gp = recentDelasPrefs();
+		if (gp == null)
+			return false;
+		try {
+                    gp.clear();
+                    gp.put(ID_RECENT_DELAS_NODE, link);			
+		} catch (BackingStoreException e) {
+			return false;
+		} catch (IllegalStateException e) {
+			return false;
+		}
+		return true;
+	}      
+
+	public String getRecentDelac() {
+		java.util.prefs.Preferences gp = recentDelacPrefs();
+                 String val="";
+		try {
+                    if (gp == null || gp.keys().length==0)
+			return "";
+		
+			String[] keys = gp.keys();
+			Arrays.sort(keys);
+                        val = gp.get(keys[0], null);
+			
+		} catch (BackingStoreException e) {
+			return "";
+		} catch (IllegalStateException e) {
+			return "";
+		}
+		return val;
+	}             
+        
+	public boolean setRecentDelac(String link) {
+		java.util.prefs.Preferences gp = recentDelacPrefs();
+		if (gp == null)
+			return false;
+		try {
+                    gp.clear();
+                    gp.put(ID_RECENT_DELAC_NODE, link);			
+		} catch (BackingStoreException e) {
+			return false;
+		} catch (IllegalStateException e) {
+			return false;
+		}
+		return true;
+	}         
+        
 	private boolean setRecentGraphs(List<File> l) {
 		java.util.prefs.Preferences gp = recentGraphsPrefs();
 		if (gp == null)
