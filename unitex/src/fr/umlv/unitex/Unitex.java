@@ -102,7 +102,7 @@ public class Unitex {
 			System.exit(0);
 		}
 		final SplashScreen splash = new SplashScreen(new ImageIcon(
-				Unitex.class.getResource("Unitex.jpg")));
+				Unitex.class.getResource("")));
 		splash.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowOpened(WindowEvent e) {
@@ -123,13 +123,13 @@ public class Unitex {
 
 								final JFrame frame = new UnitexFrame();
 								final Image img16x16 = new ImageIcon(
-										Unitex.class.getResource("16x16.png"))
+										Unitex.class.getResource(""))
 										.getImage();
 								final Image img32x32 = new ImageIcon(
-										Unitex.class.getResource("32x32.png"))
+										Unitex.class.getResource(""))
 										.getImage();
 								final Image img48x48 = new ImageIcon(
-										Unitex.class.getResource("48x48.png"))
+										Unitex.class.getResource(""))
 										.getImage();
 								frame.setIconImages(Arrays.asList(img16x16,
 										img32x32, img48x48));
